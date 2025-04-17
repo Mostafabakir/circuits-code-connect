@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CircuitBoard, Code, Cpu, Server } from 'lucide-react';
+import { ChevronDown, CircuitBoard, Code, Cpu, Server } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
@@ -13,10 +13,10 @@ const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Mostafa Bakir
+              <span className="gradient-text">Hardware</span> meets <span className="gradient-text">Software</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
-              Embedded Systems Engineer
+              Embedded systems engineer specializing in PCB design, firmware development, IoT platforms, and web applications.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-tech-blue hover:bg-tech-blue/90">
@@ -46,6 +46,10 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      
+      <a href="#about" className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-white transition-colors">
+        <ChevronDown size={32} className="animate-bounce" />
+      </a>
     </section>
   );
 };
