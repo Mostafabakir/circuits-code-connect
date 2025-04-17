@@ -34,9 +34,7 @@ const NavBar = () => {
     >
       <div className="container max-w-6xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-xl font-bold">
-            <Logo />
-          </a>
+          <Logo />
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
