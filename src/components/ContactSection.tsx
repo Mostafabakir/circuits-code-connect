@@ -27,7 +27,9 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-gray-300 text-sm">Email</p>
-                      <p className="text-white">contact@embeddedeng.com</p>
+                      <a href="mailto:mostafabakir182@gmail.com" className="text-white hover:underline">
+                        mostafabakir182@gmail.com
+                      </a>
                     </div>
                   </div>
                   
@@ -37,7 +39,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-gray-300 text-sm">Phone</p>
-                      <p className="text-white">+1 (555) 123-4567</p>
+                      <p className="text-white">+20 10 64913006</p>
                     </div>
                   </div>
                   
@@ -47,21 +49,21 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-gray-300 text-sm">Location</p>
-                      <p className="text-white">San Francisco, CA</p>
+                      <p className="text-white">Kafr Elsheikh, Egypt</p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="mt-8">
-                  <h4 className="text-lg font-semibold mb-4">Connect</h4>
+                  <h4 className="text-2xl font-bold mb-6 gradient-text">Connect with us</h4>
                   <div className="flex gap-4">
-                    <a href="#" className="p-3 bg-tech-blue/20 rounded-full hover:bg-tech-blue/40 transition-colors">
+                    <a href="https://github.com/Mostafabakir" className="p-3 bg-tech-blue/20 rounded-full hover:bg-tech-blue/40 transition-colors">
                       <Github size={20} className="text-white" />
                     </a>
-                    <a href="#" className="p-3 bg-tech-blue/20 rounded-full hover:bg-tech-blue/40 transition-colors">
+                    <a href="https://www.linkedin.com/in/mostafabakir2023/" className="p-3 bg-tech-blue/20 rounded-full hover:bg-tech-blue/40 transition-colors">
                       <Linkedin size={20} className="text-white" />
                     </a>
-                    <a href="#" className="p-3 bg-tech-blue/20 rounded-full hover:bg-tech-blue/40 transition-colors">
+                    <a href="https://wa.me/201064913006" className="p-3 bg-tech-blue/20 rounded-full hover:bg-tech-blue/40 transition-colors">
                       <MessageSquare size={20} className="text-white" />
                     </a>
                   </div>
@@ -75,26 +77,27 @@ const ContactSection = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-6 text-tech-navy">Send a Message</h3>
                 
-                <form className="space-y-4">
+                <form className="space-y-4" action="mailto:mostafabakir182@gmail.com" method="GET">
+                  <input type="hidden" name="_subject" value="Contact Form Submission" />
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium text-gray-700">Name</label>
-                      <Input id="name" placeholder="Your name" className="border-gray-300" />
+                      <Input id="name" name="_name" placeholder="Your name" className="border-gray-300" required />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label>
-                      <Input id="email" type="email" placeholder="Your email" className="border-gray-300" />
+                      <Input id="email" name="_replyto" type="email" placeholder="Your email" className="border-gray-300" required />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="subject" className="text-sm font-medium text-gray-700">Subject</label>
-                    <Input id="subject" placeholder="Subject" className="border-gray-300" />
+                    <Input id="subject" name="_subject_override" placeholder="Subject" className="border-gray-300" />
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium text-gray-700">Message</label>
-                    <Textarea id="message" placeholder="Your message" rows={5} className="border-gray-300" />
+                    <Textarea id="message" name="body" placeholder="Your message" rows={5} className="border-gray-300" required />
                   </div>
                   
                   <Button type="submit" className="w-full bg-tech-blue hover:bg-tech-blue/90">

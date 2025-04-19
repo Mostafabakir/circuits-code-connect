@@ -16,15 +16,19 @@ const HeroSection = () => {
               <span className="gradient-text">Hardware</span> meets <span className="gradient-text">Software</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
-              Embedded systems engineer specializing in PCB design, firmware development, IoT platforms, and web applications.
+              Embedded systems engineer specializing in PCB design, firmware development, IoT platforms, and web applications. Building innovative solutions to connect the physical world to the digital realm. Please feel free to contact me to discuss how we can achieve your goals together.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-tech-blue hover:bg-tech-blue/90">
-                View Projects
-              </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                Contact Me
-              </Button>
+              <a href="#projects">
+                <Button size="lg" className="bg-tech-blue hover:bg-tech-blue/90 transition-transform duration-300 hover:scale-105">
+                  View Projects
+                </Button>
+              </a>
+              <a href="#contact">
+                <Button size="lg" variant="outline" className="bg-gray-200 text-black border-gray-300 hover:bg-gray-300 hover:text-black transition-transform duration-300 hover:scale-105">
+                  Contact Me
+                </Button>
+              </a>
             </div>
           </div>
           

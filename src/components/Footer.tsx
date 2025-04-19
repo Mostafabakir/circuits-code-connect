@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h3 className="text-xl font-bold">
-              <span className="gradient-text">Embedded</span>Engineer
+              <span className="gradient-text">Mostafa</span>Bakir
             </h3>
             <p className="text-gray-400 mt-2">Bridging hardware and software solutions</p>
           </div>
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center md:flex md:justify-between md:text-left">
-          <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} EmbeddedEngineer. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Mostafa Bakir. All rights reserved.</p>
           <div className="mt-4 md:mt-0">
             <a href="#" className="text-gray-500 text-sm hover:text-gray-400 transition-colors mr-4">Privacy Policy</a>
             <a href="#" className="text-gray-500 text-sm hover:text-gray-400 transition-colors">Terms of Service</a>

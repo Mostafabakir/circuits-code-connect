@@ -29,7 +29,7 @@ const NavBar = () => {
     <header 
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-300',
-        isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        isScrolled ? 'bg-gray-100/90 backdrop-blur-sm shadow-sm' : 'bg-gray-50' // Changed to lighter gray background
       )}
     >
       <div className="container max-w-6xl mx-auto px-4 py-4">
@@ -42,7 +42,7 @@ const NavBar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="font-medium text-gray-700 hover:text-tech-blue transition-colors"
+                className="font-semibold text-black hover:text-tech-blue transition-colors" // Changed to black + semibold
               >
                 {link.name}
               </a>
@@ -67,7 +67,7 @@ const NavBar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="font-medium text-gray-700 hover:text-tech-blue transition-colors"
+                className="font-semibold text-black hover:text-tech-blue transition-colors" // Changed to black + semibold
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}

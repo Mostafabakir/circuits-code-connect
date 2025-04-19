@@ -8,20 +8,12 @@ interface LogoProps {
   iconOnly?: boolean;
 }
 
-const Logo = ({ className, iconOnly = false }: LogoProps) => {
+const Logo: React.FC<LogoProps> = ({ className, iconOnly = false }) => {
   return (
-    <div className={cn("flex items-center gap-2", className)}>
-      <div className="relative h-8 w-8">
-        <CircuitBoard className="absolute text-tech-electric h-8 w-8" />
-        <Cpu className="absolute text-tech-blue h-8 w-8 opacity-70 transform translate-x-1 translate-y-1" />
-        <Code className="absolute text-white h-8 w-8 opacity-50 transform -translate-x-1 -translate-y-1" />
-      </div>
-      
+    <div className={cn("flex items-center space-x-2", className)}>
+      <CircuitBoard className="h-6 w-6 text-tech-blue" />
       {!iconOnly && (
-        <div className="font-bold">
-          <span className="gradient-text">Mostafa</span>
-          <span className="text-tech-navy dark:text-white">Bakir</span>
-        </div>
+        <span className="font-bold text-lg">Bakir Digital Solutions</span>
       )}
     </div>
   );

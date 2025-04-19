@@ -123,5 +123,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [],  // Remove the plugin
 } satisfies Config;

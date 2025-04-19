@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CircuitBoard, Cpu, FileCode, LayoutGrid, Microchip, PlugZap, Server, Settings, Smartphone, Wifi } from 'lucide-react';
+import { CircuitBoard, Cpu, FileCode, LayoutGrid, Microchip, PlugZap, Server, Settings, Smartphone, Wifi, Battery, BookOpen, GraduationCap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
@@ -25,6 +25,27 @@ const ExpertiseCard = ({ title, icon, description, className }: ExpertiseCardPro
 
 const ExpertiseSection = () => {
   const expertiseAreas = [
+    // Add new section at the top
+    {
+      title: "Power Systems & Research",
+      categories: [
+        {
+          title: "EV Battery Systems",
+          icon: <Battery size={24} />,
+          description: "EV manufacturing collaboration with Science & Technology Center of Excellence. Battery pack sizing, BMS design constraints, and ISO26262 functional safety compliance."
+        },
+        {
+          title: "Power Electronics Research",
+          icon: <BookOpen size={24} />,
+          description: "Capacitive power transfer research with resonance converters, LTSPICE simulations, and Altium hardware design. MATLAB optimization algorithms development."
+        },
+        {
+          title: "Motor Control Systems",
+          icon: <GraduationCap size={24} />,
+          description: "PMSM vector control (FOC), MATLAB/Simulink model-based development, HIL/SIL/PIL testing, and power converter topologies design."
+        }
+      ]
+    },
     {
       title: "Hardware Design",
       categories: [
