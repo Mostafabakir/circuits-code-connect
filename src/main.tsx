@@ -4,7 +4,6 @@ import App from './App.tsx';
 import './index.css';
 import { BrowserRouter } from "react-router-dom";
 
-// Fixed createRoot usage
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter basename="/circuits-code-connect">
