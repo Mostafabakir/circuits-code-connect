@@ -1,19 +1,39 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CircuitBoard, Code, Cpu, FileCode, Server } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { projects } from '@/data/projects';
 
 interface ProjectCardProps {
+  id: number;
   title: string;
   category: string;
   description: string;
   technologies: string[];
-  icon: React.ReactNode;
+  iconType: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, category, description, technologies, icon }) => (
+const getIconComponent = (iconType: string) => {
+  switch (iconType) {
+    case 'CircuitBoard':
+      return <CircuitBoard size={24} />;
+    case 'Cpu':
+      return <Cpu size={24} />;
+    case 'FileCode':
+      return <FileCode size={24} />;
+    case 'Server':
+      return <Server size={24} />;
+    case 'Code':
+      return <Code size={24} />;
+    default:
+      return <CircuitBoard size={24} />;
+  }
+};
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, category, description, technologies, iconType }) => (
   <Card className="card-hover overflow-hidden">
     <CardContent className="p-0">
       <div className="p-1 bg-tech-blue"></div>
@@ -24,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, category, description,
             <h3 className="text-xl font-bold">{title}</h3>
           </div>
           <div className="p-2 bg-tech-blue/10 rounded-full text-tech-blue">
-            {icon}
+            {getIconComponent(iconType)}
           </div>
         </div>
         <p className="text-gray-600 mb-4">{description}</p>
@@ -37,72 +57,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, category, description,
             ))}
           </div>
         </div>
-        <Button variant="ghost" className="p-0 h-auto text-tech-blue hover:text-tech-blue/80 font-medium flex items-center gap-1">
-          View details <ArrowRight size={16} />
-        </Button>
+        <Link to={`/project/${id}`}>
+          <Button variant="ghost" className="p-0 h-auto text-tech-blue hover:text-tech-blue/80 font-medium flex items-center gap-1">
+            View details <ArrowRight size={16} />
+          </Button>
+        </Link>
       </div>
     </CardContent>
   </Card>
 );
 
 const ProjectsSection = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "Smart Energy Monitor",
-      category: "Hardware",
-      type: "hardware",
-      description: "An IoT-based energy monitoring system that tracks real-time power consumption and provides detailed analytics.",
-      technologies: ["PCB Design", "ARM Cortex-M4", "Current Sensing", "WiFi"],
-      icon: <CircuitBoard size={24} />
-    },
-    {
-      id: 2,
-      title: "Industrial Automation Controller",
-      category: "Hardware",
-      type: "hardware",
-      description: "A rugged controller for industrial automation with multiple sensor inputs and actuator outputs.",
-      technologies: ["Altium Designer", "STM32", "RS-485", "CAN Bus"],
-      icon: <Cpu size={24} />
-    },
-    {
-      id: 3,
-      title: "Bluetooth Low Energy SDK",
-      category: "Firmware",
-      type: "firmware",
-      description: "A comprehensive SDK for developing Bluetooth Low Energy applications on custom hardware.",
-      technologies: ["C/C++", "BLE 5.0", "FreeRTOS", "Power Optimization"],
-      icon: <FileCode size={24} />
-    },
-    {
-      id: 4,
-      title: "Agricultural Sensor Network",
-      category: "IoT Platform",
-      type: "iot",
-      description: "A LoRaWAN-based sensor network for monitoring soil moisture, temperature, and environmental conditions in agriculture.",
-      technologies: ["LoRaWAN", "ESP32", "The Things Network", "MQTT"],
-      icon: <Server size={24} />
-    },
-    {
-      id: 5,
-      title: "Remote Equipment Monitoring Dashboard",
-      category: "Web Application",
-      type: "web",
-      description: "A real-time dashboard for monitoring industrial equipment status, performance metrics, and maintenance scheduling.",
-      technologies: ["React", "Node.js", "WebSockets", "Time-series DB"],
-      icon: <Code size={24} />
-    },
-    {
-      id: 6,
-      title: "Smart Home Hub Firmware",
-      category: "Firmware",
-      type: "firmware",
-      description: "Custom firmware for a smart home hub supporting multiple wireless protocols and local automation.",
-      technologies: ["C++", "Zephyr RTOS", "Zigbee", "Matter"],
-      icon: <FileCode size={24} />
-    }
-  ];
-
   return (
     <section id="projects" className="section-container">
       <h2 className="section-title">Featured Projects</h2>
@@ -121,11 +86,12 @@ const ProjectsSection = () => {
             {projects.map((project) => (
               <ProjectCard
                 key={project.id}
+                id={project.id}
                 title={project.title}
                 category={project.category}
                 description={project.description}
                 technologies={project.technologies}
-                icon={project.icon}
+                iconType={project.iconType}
               />
             ))}
           </div>
@@ -139,11 +105,12 @@ const ProjectsSection = () => {
                 .map((project) => (
                   <ProjectCard
                     key={project.id}
+                    id={project.id}
                     title={project.title}
                     category={project.category}
                     description={project.description}
                     technologies={project.technologies}
-                    icon={project.icon}
+                    iconType={project.iconType}
                   />
                 ))}
             </div>
