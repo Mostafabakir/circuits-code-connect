@@ -36,14 +36,20 @@ const ProjectDetail = () => {
     }
   };
 
+  // Use the same background as HeroSection
   return (
-    <div className="section-container min-h-screen py-20">
-      <div className="container max-w-4xl mx-auto">
+    <section
+      className="relative min-h-screen flex items-center bg-tech-navy text-white overflow-hidden"
+      style={{ minHeight: '100vh' }}
+    >
+      {/* Background Circuit Pattern */}
+      <div className="absolute inset-0 opacity-10 bg-circuit-pattern"></div>
+
+      <div className="container max-w-4xl mx-auto px-4 z-10 py-20">
         <Link to="/#projects" className="inline-flex items-center text-tech-blue hover:text-tech-blue/80 mb-8">
           <ArrowLeft size={16} className="mr-2" /> Back to Projects
         </Link>
-        
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden text-black">
           <div className="h-2 bg-tech-blue"></div>
           <div className="p-8">
             <div className="flex items-start justify-between mb-6">
@@ -100,7 +106,7 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
