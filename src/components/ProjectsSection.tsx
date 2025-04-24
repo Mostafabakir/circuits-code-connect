@@ -14,6 +14,7 @@ interface ProjectCardProps {
   description: string;
   technologies: string[];
   iconType: string;
+  date: string;
 }
 
 const getIconComponent = (iconType: string) => {
@@ -33,7 +34,7 @@ const getIconComponent = (iconType: string) => {
   }
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, category, description, technologies, iconType }) => (
+const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, category, description, technologies, iconType, date }) => (
   <Card className="card-hover overflow-hidden">
     <CardContent className="p-0">
       <div className="p-1 bg-tech-blue"></div>
@@ -42,6 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, category, descript
           <div>
             <p className="text-sm text-tech-blue font-medium mb-1">{category}</p>
             <h3 className="text-xl font-bold">{title}</h3>
+            <p className="text-sm text-gray-500 mt-1">{date}</p>
           </div>
           <div className="p-2 bg-tech-blue/10 rounded-full text-tech-blue">
             {getIconComponent(iconType)}
@@ -92,6 +94,7 @@ const ProjectsSection = () => {
                 description={project.description}
                 technologies={project.technologies}
                 iconType={project.iconType}
+                date={project.date}
               />
             ))}
           </div>
@@ -111,6 +114,7 @@ const ProjectsSection = () => {
                     description={project.description}
                     technologies={project.technologies}
                     iconType={project.iconType}
+                    date={project.date}
                   />
                 ))}
             </div>

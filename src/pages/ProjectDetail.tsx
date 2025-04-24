@@ -56,6 +56,7 @@ const ProjectDetail = () => {
               <div>
                 <p className="text-sm text-tech-blue font-medium mb-1">{project.category}</p>
                 <h1 className="text-3xl font-bold">{project.title}</h1>
+                <p className="text-sm text-gray-500 mt-2">{project.date}</p>
               </div>
               <div className="p-4 bg-tech-blue/10 rounded-full text-tech-blue">
                 {getIconComponent()}
@@ -64,43 +65,79 @@ const ProjectDetail = () => {
             
             <div className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Overview</h2>
-              <p className="text-gray-700 mb-4">{project.description}</p>
+              {project.title === "Smart EVMSE" ? (
+                <p className="text-gray-700 mb-4">
+                  A smart energy monitor is an advanced device designed to track and analyze energy consumption in real-time, typically within residential, commercial, or industrial settings. By providing actionable insights, it empowers users to optimize energy use, reduce costs, and support sustainable practices.
+                </p>
+              ) : (
+                <p className="text-gray-700 mb-4">{project.description}</p>
+              )}
               <p className="text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, 
-                nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt, 
-                nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.
+              By transforming raw data into actionable insights, smart energy monitors are pivotal in advancing energy efficiency and fostering a culture of sustainability. Their evolution continues to align with technological innovations, driving smarter energy management worldwide.
               </p>
             </div>
             
             <div className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Technologies Used</h2>
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map((tech, index) => (
-                  <span key={index} className="px-3 py-1 bg-gray-100 rounded-full text-sm">
-                    {tech}
-                  </span>
-                ))}
+                {project.title === "Smart EVMSE"
+                  ? [
+                      "PCB design",
+                      "Altium",
+                      "ESP32",
+                      "LoRa",
+                      "Embedded C/C++",
+                      "HTML",
+                      "CSS",
+                      "ReactJs",
+                    ].map((tech, index) => (
+                      <span key={index} className="px-3 py-1 bg-gray-100 rounded-full text-sm">
+                        {tech}
+                      </span>
+                    ))
+                  : project.technologies.map((tech, index) => (
+                      <span key={index} className="px-3 py-1 bg-gray-100 rounded-full text-sm">
+                        {tech}
+                      </span>
+                    ))}
               </div>
             </div>
             
             <div className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Project Gallery</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {[1, 2, 3, 4].map((item) => (
-                  <div key={item} className="bg-gray-100 rounded-lg aspect-video flex items-center justify-center">
-                    <p className="text-gray-500">Project Image {item}</p>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {project.title === "Smart EVMSE" ? (
+                  [
+                    "/circuits-code-connect/projects/image.png",
+                    "/circuits-code-connect/projects/smart_meter_sch.png",
+                    "/circuits-code-connect/projects/SmartEVSEv2_mode_smart.jpg",
+                    "/circuits-code-connect/projects/SmartEVSEv2.jpg"
+                  ].map((src, idx) => (
+                    <div key={idx} className="bg-gray-100 rounded-lg overflow-hidden h-64">
+                      <img
+                        src={src}
+                        alt={`Smart EVMSE ${idx + 1}`}
+                        className="w-full h-full object-contain p-2"
+                      />
+                    </div>
+                  ))
+                ) : (
+                  [1, 2, 3, 4].map((item) => (
+                    <div key={item} className="bg-gray-100 rounded-lg aspect-video flex items-center justify-center">
+                      <p className="text-gray-500">Project Image {item}</p>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
             
             <div>
               <h2 className="text-xl font-semibold mb-4">Key Features</h2>
               <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                <li>Feature one description with technical details</li>
-                <li>Feature two with implementation challenges</li>
-                <li>Feature three highlighting innovative solutions</li>
-                <li>Feature four demonstrating technical expertise</li>
+                <li>Real-Time Energy Usage Tracking</li>
+                <li>Web server for data visualization</li>
+                <li>multi-option to keep up with the latest updates</li>
+                <li>support for multiple users and coroperations</li>
               </ul>
             </div>
           </div>
