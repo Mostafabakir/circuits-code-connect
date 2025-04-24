@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages --dist dist --branch gh-pages --dotfiles"
+    "deploy": "gh-pages --repo https://github.com/Mostafabakir/circuits-code-connect.git --dist dist --branch gh-pages --dotfiles"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
