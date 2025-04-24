@@ -67,7 +67,7 @@ const ProjectDetail = () => {
               <h2 className="text-xl font-semibold mb-4">Overview</h2>
               {project.title === "Smart EVMSE" ? (
                 <p className="text-gray-700 mb-4">
-                  A smart energy monitor is an advanced device designed to track and analyze energy consumption in real-time, typically within residential, commercial, or industrial settings. By providing actionable insights, it empowers users to optimize energy use, reduce costs, and support sustainable practices.
+                  A smart electric vehicle monitoring and supply equipment (EVMSE) is an advanced device designed to manage and control electric vehicle charging, providing real-time monitoring and intelligent power distribution capabilities. By providing actionable insights, it empowers users to optimize charging efficiency, reduce costs, and support sustainable practices.
                 </p>
               ) : (
                 <p className="text-gray-700 mb-4">{project.description}</p>
