@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Project Placeholder Images</title>
+</head>
+<body>
+    <h2>Project Placeholder Image Generator</h2>
+    <p>This tool generates placeholder images for projects. Right-click each image and "Save image as" to download.</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px;">
+        <!-- Motor Control System -->
+        <div>
+            <h3>Motor Control System</h3>
+            <canvas id="motor-control" width="400" height="300" style="border: 1px solid #ccc;"></canvas>
+            <br><a href="#" onclick="downloadCanvas('motor-control', 'motor_control_system.jpg')">Download</a>
+        </div>
+        
+        <!-- BMS System -->
+        <div>
+            <h3>BMS System</h3>
+            <canvas id="bms-system" width="400" height="300" style="border: 1px solid #ccc;"></canvas>
+            <br><a href="#" onclick="downloadCanvas('bms-system', 'bms_system.jpg')">Download</a>
+        </div>
+        
+        <!-- Agriculture IoT -->
+        <div>
+            <h3>Agriculture IoT</h3>
+            <canvas id="agriculture-iot" width="400" height="300" style="border: 1px solid #ccc;"></canvas>
+            <br><a href="#" onclick="downloadCanvas('agriculture-iot', 'agriculture_iot.jpg')">Download</a>
+        </div>
+        
+        <!-- Energy Dashboard -->
+        <div>
+            <h3>Energy Dashboard</h3>
+            <canvas id="energy-dashboard" width="400" height="300" style="border: 1px solid #ccc;"></canvas>
+            <br><a href="#" onclick="downloadCanvas('energy-dashboard', 'energy_dashboard.jpg')">Download</a>
+        </div>
+        
+        <!-- Wireless Sensor -->
+        <div>
+            <h3>Wireless Sensor</h3>
+            <canvas id="wireless-sensor" width="400" height="300" style="border: 1px solid #ccc;"></canvas>
+            <br><a href="#" onclick="downloadCanvas('wireless-sensor', 'wireless_sensor.jpg')">Download</a>
+        </div>
+        
+        <!-- Power Converter -->
+        <div>
+            <h3>Power Converter</h3>
+            <canvas id="power-converter" width="400" height="300" style="border: 1px solid #ccc;"></canvas>
+            <br><a href="#" onclick="downloadCanvas('power-converter', 'power_converter.jpg')">Download</a>
+        </div>
+        
+        <!-- Building Automation -->
+        <div>
+            <h3>Building Automation</h3>
+            <canvas id="building-automation" width="400" height="300" style="border: 1px solid #ccc;"></canvas>
+            <br><a href="#" onclick="downloadCanvas('building-automation', 'building_automation.jpg')">Download</a>
+        </div>
+        
+        <!-- Embedded Linux -->
+        <div>
+            <h3>Embedded Linux</h3>
+            <canvas id="embedded-linux" width="400" height="300" style="border: 1px solid #ccc;"></canvas>
+            <br><a href="#" onclick="downloadCanvas('embedded-linux', 'embedded_linux.jpg')">Download</a>
+        </div>
+        
+        <!-- Digital Twin -->
+        <div>
+            <h3>Digital Twin</h3>
+            <canvas id="digital-twin" width="400" height="300" style="border: 1px solid #ccc;"></canvas>
+            <br><a href="#" onclick="downloadCanvas('digital-twin', 'digital_twin.jpg')">Download</a>
+        </div>
+    </div>
+
+    <script>
+        const colors = {
+            'motor-control': '#0070f3',
+            'bms-system': '#00BFFF', 
+            'agriculture-iot': '#10b981',
+            'energy-dashboard': '#f59e0b',
+            'wireless-sensor': '#8b5cf6',
+            'power-converter': '#ef4444',
+            'building-automation': '#06b6d4',
+            'embedded-linux': '#84cc16',
+            'digital-twin': '#f97316'
+        };
+
+        const texts = {
+            'motor-control': 'Motor Control\nSystem',
+            'bms-system': 'BMS System\nBattery Management',
+            'agriculture-iot': 'Smart Agriculture\nIoT Platform',
+            'energy-dashboard': 'Energy Monitoring\nDashboard',
+            'wireless-sensor': 'Wireless Sensor\nNetwork',
+            'power-converter': 'Power Electronics\nConverter',
+            'building-automation': 'Building\nAutomation',
+            'embedded-linux': 'Embedded\nLinux',
+            'digital-twin': 'Digital Twin\nPlatform'
+        };
+
+        Object.keys(colors).forEach(id => {
+            const canvas = document.getElementById(id);
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 400, 300);
+            gradient.addColorStop(0, colors[id]);
+            gradient.addColorStop(1, colors[id] + '80');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 400, 300);
+            
+            // Add some geometric shapes
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.beginPath();
+            ctx.arc(350, 50, 30, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(50, 250, 20, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Add text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            const lines = texts[id].split('\n');
+            const lineHeight = 30;
+            const startY = 150 - (lines.length - 1) * lineHeight / 2;
+            
+            lines.forEach((line, index) => {
+                ctx.fillText(line, 200, startY + index * lineHeight);
+            });
+            
+            // Add icon representation
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.font = '48px Arial';
+            ctx.fillText('⚡', 200, 80);
+        });
+
+        function downloadCanvas(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/jpeg', 0.8);
+            link.click();
+        }
+    </script>
+</body>
+</html>
