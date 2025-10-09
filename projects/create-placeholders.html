@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Custom Project Placeholders</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
+        .project { text-align: center; }
+        canvas { border: 1px solid #ddd; border-radius: 4px; }
+        .download-btn { 
+            display: inline-block; 
+            margin-top: 10px; 
+            padding: 8px 16px; 
+            background: #0070f3; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-size: 14px;
+        }
+        .download-btn:hover { background: #005bb5; }
+        h1 { color: #333; text-align: center; }
+        .instructions { background: #e3f2fd; padding: 15px; border-radius: 4px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Custom Project Placeholder Generator</h1>
+        
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <ol>
+                <li>Click "Generate & Download" for each project</li>
+                <li>Save the downloaded images to your <code>public/projects/</code> folder</li>
+                <li>Use the exact filenames shown below</li>
+                <li>Refresh your portfolio to see the new images!</li>
+            </ol>
+        </div>
+
+        <div class="grid">
+            <div class="project">
+                <h3>Motor Control System</h3>
+                <canvas id="motor-control" width="400" height="300"></canvas>
+                <br>
+                <a href="#" onclick="generateAndDownload('motor-control', 'motor_control_system.jpg')" class="download-btn">
+                    Generate & Download
+                </a>
+                <p><small>Save as: <strong>motor_control_system.jpg</strong></small></p>
+            </div>
+            
+            <div class="project">
+                <h3>BMS System</h3>
+                <canvas id="bms-system" width="400" height="300"></canvas>
+                <br>
+                <a href="#" onclick="generateAndDownload('bms-system', 'bms_system.jpg')" class="download-btn">
+                    Generate & Download
+                </a>
+                <p><small>Save as: <strong>bms_system.jpg</strong></small></p>
+            </div>
+            
+            <div class="project">
+                <h3>Agriculture IoT</h3>
+                <canvas id="agriculture-iot" width="400" height="300"></canvas>
+                <br>
+                <a href="#" onclick="generateAndDownload('agriculture-iot', 'agriculture_iot.jpg')" class="download-btn">
+                    Generate & Download
+                </a>
+                <p><small>Save as: <strong>agriculture_iot.jpg</strong></small></p>
+            </div>
+            
+            <div class="project">
+                <h3>Energy Dashboard</h3>
+                <canvas id="energy-dashboard" width="400" height="300"></canvas>
+                <br>
+                <a href="#" onclick="generateAndDownload('energy-dashboard', 'energy_dashboard.jpg')" class="download-btn">
+                    Generate & Download
+                </a>
+                <p><small>Save as: <strong>energy_dashboard.jpg</strong></small></p>
+            </div>
+            
+            <div class="project">
+                <h3>Wireless Sensor</h3>
+                <canvas id="wireless-sensor" width="400" height="300"></canvas>
+                <br>
+                <a href="#" onclick="generateAndDownload('wireless-sensor', 'wireless_sensor.jpg')" class="download-btn">
+                    Generate & Download
+                </a>
+                <p><small>Save as: <strong>wireless_sensor.jpg</strong></small></p>
+            </div>
+            
+            <div class="project">
+                <h3>Power Converter</h3>
+                <canvas id="power-converter" width="400" height="300"></canvas>
+                <br>
+                <a href="#" onclick="generateAndDownload('power-converter', 'power_converter.jpg')" class="download-btn">
+                    Generate & Download
+                </a>
+                <p><small>Save as: <strong>power_converter.jpg</strong></small></p>
+            </div>
+            
+            <div class="project">
+                <h3>Building Automation</h3>
+                <canvas id="building-automation" width="400" height="300"></canvas>
+                <br>
+                <a href="#" onclick="generateAndDownload('building-automation', 'building_automation.jpg')" class="download-btn">
+                    Generate & Download
+                </a>
+                <p><small>Save as: <strong>building_automation.jpg</strong></small></p>
+            </div>
+            
+            <div class="project">
+                <h3>Embedded Linux</h3>
+                <canvas id="embedded-linux" width="400" height="300"></canvas>
+                <br>
+                <a href="#" onclick="generateAndDownload('embedded-linux', 'embedded_linux.jpg')" class="download-btn">
+                    Generate & Download
+                </a>
+                <p><small>Save as: <strong>embedded_linux.jpg</strong></small></p>
+            </div>
+            
+            <div class="project">
+                <h3>Digital Twin</h3>
+                <canvas id="digital-twin" width="400" height="300"></canvas>
+                <br>
+                <a href="#" onclick="generateAndDownload('digital-twin', 'digital_twin.jpg')" class="download-btn">
+                    Generate & Download
+                </a>
+                <p><small>Save as: <strong>digital_twin.jpg</strong></small></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const projectData = {
+            'motor-control': { color: '#0070f3', icon: '⚙️', title: 'Motor Control', subtitle: 'System' },
+            'bms-system': { color: '#00BFFF', icon: '🔋', title: 'BMS System', subtitle: 'Battery Management' },
+            'agriculture-iot': { color: '#10b981', icon: '🌱', title: 'Smart Agriculture', subtitle: 'IoT Platform' },
+            'energy-dashboard': { color: '#f59e0b', icon: '📊', title: 'Energy Dashboard', subtitle: 'Monitoring' },
+            'wireless-sensor': { color: '#8b5cf6', icon: '📡', title: 'Wireless Sensor', subtitle: 'Network' },
+            'power-converter': { color: '#ef4444', icon: '⚡', title: 'Power Converter', subtitle: 'Electronics' },
+            'building-automation': { color: '#06b6d4', icon: '🏢', title: 'Building', subtitle: 'Automation' },
+            'embedded-linux': { color: '#84cc16', icon: '🐧', title: 'Embedded Linux', subtitle: 'Distribution' },
+            'digital-twin': { color: '#f97316', icon: '🔄', title: 'Digital Twin', subtitle: 'Platform' }
+        };
+
+        function generatePlaceholder(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            const data = projectData[canvasId];
+            
+            if (!ctx || !data) return;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, 400, 300);
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 400, 300);
+            gradient.addColorStop(0, data.color);
+            gradient.addColorStop(1, data.color + '80');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 400, 300);
+            
+            // Add decorative circles
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.beginPath();
+            ctx.arc(350, 50, 30, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(50, 250, 20, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(300, 200, 15, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Add main icon
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.font = 'bold 64px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(data.icon, 200, 120);
+            
+            // Add title
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 28px Arial';
+            ctx.fillText(data.title, 200, 180);
+            
+            // Add subtitle
+            ctx.font = '20px Arial';
+            ctx.fillText(data.subtitle, 200, 210);
+            
+            // Add tech pattern
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+            for (let i = 0; i < 20; i++) {
+                ctx.fillRect(Math.random() * 400, Math.random() * 300, 2, 2);
+            }
+        }
+
+        function generateAndDownload(canvasId, filename) {
+            generatePlaceholder(canvasId);
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/jpeg', 0.9);
+            link.click();
+        }
+
+        // Generate all placeholders on load
+        Object.keys(projectData).forEach(generatePlaceholder);
+    </script>
+</body>
+</html>
