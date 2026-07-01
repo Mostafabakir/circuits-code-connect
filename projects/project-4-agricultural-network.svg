@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" rx="36" fill="#052e16"/>
+  <path d="M180 620 C320 460, 460 420, 600 460 C740 500, 900 560, 1020 360" stroke="#4ade80" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <circle cx="300" cy="560" r="42" fill="#86efac"/>
+  <circle cx="600" cy="460" r="42" fill="#86efac"/>
+  <circle cx="900" cy="360" r="42" fill="#86efac"/>
+  <rect x="180" y="150" width="420" height="120" rx="24" fill="#14532d"/>
+  <rect x="660" y="150" width="300" height="120" rx="24" fill="#14532d"/>
+  <text x="220" y="650" fill="#f8fafc" font-family="Arial, sans-serif" font-size="42" font-weight="700">Agricultural Sensor Network</text>
+  <text x="220" y="700" fill="#bbf7d0" font-family="Arial, sans-serif" font-size="26">LoRaWAN monitoring for sustainable farming</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" rx="36" fill="#1f2937"/>
+  <rect x="320" y="180" width="560" height="420" rx="32" fill="#111827" stroke="#f59e0b" stroke-width="8"/>
+  <rect x="380" y="250" width="440" height="120" rx="20" fill="#f59e0b"/>
+  <rect x="440" y="420" width="320" height="120" rx="20" fill="#374151"/>
+  <text x="250" y="650" fill="#f8fafc" font-family="Arial, sans-serif" font-size="42" font-weight="700">Smart Home Hub Firmware</text>
+  <text x="250" y="700" fill="#fcd34d" font-family="Arial, sans-serif" font-size="26">Connected automation with robust firmware</text>
+</svg>

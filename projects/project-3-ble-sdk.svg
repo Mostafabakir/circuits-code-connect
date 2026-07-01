@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" rx="36" fill="#020617"/>
+  <circle cx="600" cy="340" r="220" fill="#0f172a" stroke="#22c55e" stroke-width="8"/>
+  <rect x="430" y="300" width="340" height="80" rx="20" fill="#22c55e"/>
+  <rect x="480" y="420" width="240" height="80" rx="20" fill="#3b82f6"/>
+  <rect x="300" y="520" width="600" height="90" rx="24" fill="#1e293b"/>
+  <text x="220" y="650" fill="#f8fafc" font-family="Arial, sans-serif" font-size="42" font-weight="700">Bluetooth Low Energy SDK</text>
+  <text x="220" y="700" fill="#94a3b8" font-family="Arial, sans-serif" font-size="26">Firmware tooling for connected devices</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" rx="36" fill="#172554"/>
+  <rect x="120" y="160" width="960" height="500" rx="28" fill="#111827" stroke="#60a5fa" stroke-width="6"/>
+  <rect x="180" y="240" width="200" height="140" rx="20" fill="#1d4ed8"/>
+  <rect x="420" y="240" width="280" height="140" rx="20" fill="#2563eb"/>
+  <rect x="740" y="240" width="220" height="140" rx="20" fill="#3b82f6"/>
+  <rect x="180" y="430" width="780" height="160" rx="24" fill="#0f172a"/>
+  <text x="220" y="650" fill="#f8fafc" font-family="Arial, sans-serif" font-size="42" font-weight="700">Remote Equipment Monitoring Dashboard</text>
+  <text x="220" y="700" fill="#bfdbfe" font-family="Arial, sans-serif" font-size="26">Real-time monitoring and maintenance insights</text>
+</svg>
